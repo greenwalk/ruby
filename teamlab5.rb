@@ -1,14 +1,14 @@
-us = {}
+# 1000000までの数字で、各桁を掛け算する計算を積が１桁になるまで繰り返す。ちょうど6回で計算が終わるものの数。
+array = []
 
 (1..1000000).each do |i|
   n = 0
   while i.to_s.length > 1 do
-    i = i.to_s.split('').map(&:to_i).inject(:*)
+    i = i.digits.inject(:*)
     n += 1
   end
-  us[n] = (us[n] || 0) + 1
+  # array[n]が空だったら、1を代入して、中に何か入ってたらそれ＋１を代入
+  array[n] = (array[n] || 0) + 1
 end
 
-p us
-# {0=>9, 1=>248, 2=>340, 3=>310, 4=>84, 5=>9}
-p us[6]
+puts array[6]

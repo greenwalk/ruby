@@ -174,10 +174,11 @@ elsif r == "B" && dir == "D"
   puts ba7_d_start_time
 
   # 初期値
+
+  s_num = s[1..-1].to_i
   if s == "A7"
     s_num = 6
   end
-  s_num = s[1..-1].to_i
   hh = ba7_d_start_time[6 - s_num].slice(0..1).to_i
   mm = ba7_d_start_time[6 - s_num].slice(3..4).to_i
 
